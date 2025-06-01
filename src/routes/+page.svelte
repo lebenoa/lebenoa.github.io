@@ -22,7 +22,7 @@
 
     const duration = 300;
 
-    let activeTab = $state(1);
+    let activeTab = $state(0);
     let mobileNavModal = $state(false);
     let emailCopiedState = $state(false);
 </script>
