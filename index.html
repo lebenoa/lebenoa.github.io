@@ -1,38 +1,85 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="./favicon.webp" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-		<link rel="modulepreload" href="./_app/immutable/entry/start.DYa5w9d3.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/BFGrj7uQ.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/lrSaCqzX.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/DIeogL5L.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/CjkOByh2.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.CAridv8z.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/C1zBxXnn.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/nn5BpNPP.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/CWj6FrbW.js">
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="./favicon.webp" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Lebenoa's Index</title>
+        
+		<link rel="modulepreload" href="./_app/immutable/entry/start.exNTKn5B.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BTuno-kX.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/tEZZukQM.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DuI1w_oY.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.BFzLZJ4C.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BlU3HF1n.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/ls_0JOi6.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/nfjtpgh1.js">
+    </head>
+    <body data-sveltekit-preload-data="hover">
+        <div style="display: contents">
 			<script>
 				{
-					__sveltekit_yksxj0 = {
+					__sveltekit_1u7q3b3 = {
 						base: new URL(".", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("./_app/immutable/entry/start.DYa5w9d3.js"),
-						import("./_app/immutable/entry/app.CAridv8z.js")
+						import("./_app/immutable/entry/start.exNTKn5B.js"),
+						import("./_app/immutable/entry/app.BFzLZJ4C.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});
 				}
 			</script>
 		</div>
-	</body>
+
+        <script>
+            const title = document.querySelector("title");
+            const text = title.innerText;
+            let currentTitle = text;
+            // 1 = erase
+            // 0 = restore
+            let direction = 1;
+            let index = text.length - 1;
+
+            function changeTitle() {
+                if (direction == 0) {
+                    if (index > 1) {
+                        currentTitle = currentTitle.slice(0, -1);
+                    }
+                    currentTitle = currentTitle + text[index] + "|";
+                    title.innerText = currentTitle;
+                    index += 1;
+                    if (index >= text.length) {
+                        direction = 1;
+                        index = text.length;
+                    }
+                } else if (direction == 1) {
+                    if (index <= 1) {
+                        currentTitle.slice(0, -1);
+                    }
+                    currentTitle = currentTitle.slice(0, -1);
+                    title.innerText = currentTitle + "|";
+                    index -= 1;
+                    if (index <= 0) {
+                        direction = 0;
+                        index = 1;
+                    }
+                }
+            }
+
+            function operate() {
+                const randomDelay = Math.round(Math.random() * 1000);
+                const timeout = setTimeout(() => {
+                    changeTitle();
+                    clearTimeout(timeout);
+                    operate();
+                }, randomDelay);
+            }
+
+            operate();
+        </script>
+    </body>
 </html>
