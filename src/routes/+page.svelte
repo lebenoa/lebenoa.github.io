@@ -110,7 +110,13 @@
             mobileNavModal = true;
         }}
     >
-        <span class="mr-1 text-green-500">&gt;</span><span class="text-orange-500">cat</span> introduction.txt
+        {#if activeTab == 0}
+            <span class="mr-1 text-green-500">&gt;</span><span class="text-orange-500">cat</span> introduction.txt
+        {:else if activeTab == 1}
+            <span class="mr-1 text-green-500">&gt;</span><span class="text-orange-500">ls</span> programming-exp
+        {:else if activeTab == 2}
+            <span class="mr-1 text-green-500">&gt;</span><span class="text-orange-500">ls</span> third-parties-exp
+        {/if}
     </TopLeftBottomRightCutButton>
 </div>
 
