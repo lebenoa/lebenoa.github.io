@@ -20,7 +20,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: bunh install
+        run: bun install
 
       - name: Build project
         run: bun run build  # Make sure your package.json has a "build" script
