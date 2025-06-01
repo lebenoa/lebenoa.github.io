@@ -149,7 +149,7 @@
                 in:scale={{ duration, delay: duration }}
                 out:scale={{ duration }}
                 class="h-auto w-[130px] self-start md:w-[200px] md:self-center"
-                src="https://placehold.co/200"
+                src="https://cdn.discordapp.com/avatars/572446728759017472/2f8ca3270a849789da4c23e453209fcc.png?size=2048"
                 alt="My Avatar"
             />
         </div>
