@@ -255,7 +255,7 @@
                 </tr>
                 <tr
                     in:fly={{ x: -100, duration, delay: duration + 100 }}
-                    out:fly={{ x: -100, duration: duration + 100 }}
+                    out:fly={{ x: -100, duration }}
                 >
                     <td><img class="h-16 w-auto" src={Go} alt="GO Logo" /></td>
                     <td class="text-2xl">GO</td>
@@ -266,7 +266,7 @@
                 </tr>
                 <tr
                     in:fly={{ x: 100, duration, delay: duration + 200 }}
-                    out:fly={{ x: 100, duration: duration + 200 }}
+                    out:fly={{ x: 100, duration }}
                 >
                     <td><img class="h-16 w-auto" src={Java} alt="JAVA Logo" /></td>
                     <td class="text-2xl">Java</td>
@@ -277,7 +277,7 @@
                 </tr>
                 <tr
                     in:fly={{ x: -100, duration, delay: duration + 300 }}
-                    out:fly={{ x: -100, duration: duration + 300 }}
+                    out:fly={{ x: -100, duration }}
                 >
                     <td><img class="h-16 w-auto" src={JavaScript} alt="JavaScript Logo" /></td>
                     <td class="text-2xl">JavaScript</td>
@@ -288,7 +288,7 @@
                 </tr>
                 <tr
                     in:fly={{ x: 100, duration, delay: duration + 400 }}
-                    out:fly={{ x: 100, duration: duration + 400 }}
+                    out:fly={{ x: 100, duration }}
                 >
                     <td><img class="h-16 w-auto" src={Kotlin} alt="Kotlin Logo" /></td>
                     <td class="text-2xl">Kotlin</td>
@@ -299,7 +299,7 @@
                 </tr>
                 <tr
                     in:fly={{ x: -100, duration, delay: duration + 500 }}
-                    out:fly={{ x: -100, duration: duration + 500 }}
+                    out:fly={{ x: -100, duration }}
                 >
                     <td><img class="h-16 w-auto" src={Php} alt="PHP Logo" /></td>
                     <td class="text-2xl">PHP</td>
@@ -310,7 +310,7 @@
                 </tr>
                 <tr
                     in:fly={{ x: 100, duration, delay: duration + 600 }}
-                    out:fly={{ x: 100, duration: duration + 600 }}
+                    out:fly={{ x: 100, duration }}
                 >
                     <td><img class="h-16 w-auto" src={Python} alt="Python Logo" /></td>
                     <td class="text-2xl">Python</td>
@@ -321,7 +321,7 @@
                 </tr>
                 <tr
                     in:fly={{ x: -100, duration, delay: duration + 700 }}
-                    out:fly={{ x: -100, duration: duration + 700 }}
+                    out:fly={{ x: -100, duration }}
                 >
                     <td><img class="h-16 w-auto" src={Rust} alt="Rust Logo" /></td>
                     <td class="text-2xl">Rust</td>
@@ -332,7 +332,7 @@
                 </tr>
                 <tr
                     in:fly={{ x: 100, duration, delay: duration + 800 }}
-                    out:fly={{ x: 100, duration: duration + 800 }}
+                    out:fly={{ x: 100, duration }}
                 >
                     <td><img class="h-16 w-auto" src={Zig} alt="Zig Logo" /></td>
                     <td class="text-2xl">Zig</td>
