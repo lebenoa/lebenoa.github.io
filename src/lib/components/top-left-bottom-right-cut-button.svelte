@@ -1,6 +1,5 @@
 <script lang="ts">
     let {
-        label,
         width = 150,
         height = 50,
         cutCorner = 15,
@@ -17,9 +16,10 @@
         activeStyle = "fill-cyan-300 stroke-cyan-300",
         activeTextStyle = "text-black",
 
+        children,
+
         ...rest
     }: {
-        label: string;
         width?: number;
         height?: number;
         cutCorner?: number;
@@ -34,6 +34,8 @@
         active?: boolean;
         activeStyle?: string;
         activeTextStyle?: string;
+
+        children: any;
 
         [key: string]: unknown;
     } = $props();
@@ -75,6 +77,6 @@
             ? activeTextStyle
             : textColor + ' ' + hoverTextStyle}"
     >
-        {@html label}
+        {@render children()}
     </p>
 </button>

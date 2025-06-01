@@ -1,37 +1,37 @@
 name: Build and Deploy to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main  # or your default branch
-  workflow_dispatch:  # allows manual triggers
+    push:
+        branches:
+            - main # or your default branch
+    workflow_dispatch: # allows manual triggers
 
 permissions:
-  contents: write
+    contents: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-      # Checkout the code
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            # Checkout the code
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      # Setup Node.js and pnpm
-      - name: Setup Bun JS
-        uses: oven-sh/setup-bun@v2
+            # Setup Node.js and pnpm
+            - name: Setup Bun JS
+              uses: oven-sh/setup-bun@v2
 
-      - name: Install dependencies
-        run: bun install
+            - name: Install dependencies
+              run: bun install
 
-      - name: Build project
-        run: bun run build  # Make sure your package.json has a "build" script
+            - name: Build project
+              run: bun run build # Make sure your package.json has a "build" script
 
-      # Deploy to gh-pages branch
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # Adjust if your output dir is different
-          publish_branch: gh-pages
+            # Deploy to gh-pages branch
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./build # Adjust if your output dir is different
+                  publish_branch: gh-pages

@@ -14,4 +14,19 @@ import Github from "./github.svg";
 import Discord from "./discord.svg";
 import Steam from "./steam.svg";
 
-export { Csharp, Go, Java, JavaScript, Kotlin, Php, Python, Rust, Zig, Facebook, Github, Discord, Steam, Youtube };
+export {
+    Csharp,
+    Go,
+    Java,
+    JavaScript,
+    Kotlin,
+    Php,
+    Python,
+    Rust,
+    Zig,
+    Facebook,
+    Github,
+    Discord,
+    Steam,
+    Youtube
+};

@@ -1,12 +1,60 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.webp" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%sveltekit.assets%/favicon.webp" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Lebenoa's Index</title>
+        %sveltekit.head%
+    </head>
+    <body data-sveltekit-preload-data="hover">
+        <div style="display: contents">%sveltekit.body%</div>
+
+        <script>
+            const title = document.querySelector("title");
+            const text = title.innerText;
+            let currentTitle = text;
+            // 1 = erase
+            // 0 = restore
+            let direction = 1;
+            let index = text.length - 1;
+
+            function changeTitle() {
+                if (direction == 0) {
+                    if (index > 1) {
+                        currentTitle = currentTitle.slice(0, -1);
+                    }
+                    currentTitle = currentTitle + text[index] + "|";
+                    title.innerText = currentTitle;
+                    index += 1;
+                    if (index >= text.length) {
+                        direction = 1;
+                        index = text.length;
+                    }
+                } else if (direction == 1) {
+                    if (index <= 1) {
+                        currentTitle.slice(0, -1);
+                    }
+                    currentTitle = currentTitle.slice(0, -1);
+                    title.innerText = currentTitle + "|";
+                    index -= 1;
+                    if (index <= 0) {
+                        direction = 0;
+                        index = 1;
+                    }
+                }
+            }
+
+            function operate() {
+                const randomDelay = Math.round(Math.random() * 1000);
+                const timeout = setTimeout(() => {
+                    changeTitle();
+                    clearTimeout(timeout);
+                    operate();
+                }, randomDelay);
+            }
+
+            operate();
+        </script>
+    </body>
 </html>
